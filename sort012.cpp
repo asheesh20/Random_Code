@@ -1,3 +1,16 @@
+/*
+This Question is a variation of Dutch National Flag Algorithm 
+3 Pointer Approach :
+
+low=0,mid=0,high=n-1;
+while(mid<=high)
+mid - 0 - swap(a[low],a[mid]) low++,mid++
+mid - 1 - mid++
+mid - 2 - swap(a[mid],a[high]) high--
+
+*/
+
+
 #include<bits/stdc++.h>
 #define ll long long 
 using namespace std;
