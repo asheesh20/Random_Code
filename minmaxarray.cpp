@@ -1,24 +1,41 @@
+/*
+
+Link : https://www.geeksforgeeks.org/maximum-and-minimum-in-an-array/
+
+*/
+
 #include<bits/stdc++.h>
 #define ll long long 
+#define ull unsigned long long 	
 using namespace std;
-int getMax(int [],int );
-int getMin(int [],int );
+int32_t getmin(int [],int );
+int32_t getmax(int [],int );
 int32_t main(){
-	int a[5]={65,3,-19,85,-123};
-	cout<<"Max is : "<<getMax(a,5)<<endl;
-	cout<<"Nin is : "<<getMin(a,5)<<endl;
-}
-int getMax(int a[],int n){
-	int i,ma=INT_MIN;
-	for(i=0;i<n;i++){
-		if(a[i]>ma) ma=a[i];
+	int n;
+	cin>>n;
+	int a[n];
+	for(int i=0;i<n;i++){
+		cin>>a[i];
 	}
-	return ma;
+	cout<<"Minimum Element is : "<<getmin(a,n)<<endl;
+	cout<<"Maximum Element is : "<<getmax(a,n)<<endl;
 }
-int getMin(int a[],int n){
-	ll i,mi=INT_MAX;
-	for(i=0;i<n;i++){
-		if(mi>a[i]) mi=a[i];
+int32_t getmin(int a[],int n){
+	int minelement=INT_MAX;
+	for(int i=0;i<n;i++){
+		minelement=min(a[i],minelement);
 	}
-	return mi;
+	return minelement;
 }
+int32_t getmax(int a[],int n){
+	int maxelement=INT_MIN;
+	for(int i=0;i<n;i++){
+		maxelement=max(a[i],maxelement);
+	}
+	return maxelement;
+}
+
+/* 
+TC : O(N)
+SC : O(1)
+*/
